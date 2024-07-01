@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const RenderUser = require('./models/RenderSchema'); // Corrected path
+const RenderUser = require('./modals/RenderSchema');
+
 const port = '5173';
 const mongo_url = 'mongodb+srv://mongomern:mongopass@cluster0.laoawkm.mongodb.net/?appName=Cluster0';
 
