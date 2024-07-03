@@ -2,17 +2,20 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const RenderUser = require('./modals/RenderSchema');
-
-const port = '5173';
-const mongo_url = 'mongodb+srv://mongomern:mongopass@cluster0.laoawkm.mongodb.net/?appName=Cluster0';
+require("dotenv").config();
+const port = '8000';
+const mongo_url =process.env.mongo_url;
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(mongo_url, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Database connected successfully"))
-  .catch((err) => console.error("Database connection error:", err));
+mongoose.set('strictQuery',false)
+
+mongoose.connect(mongo_url,{useNewUrlParser: true, useUnifiedTopology: true}).then(console.log("db connected sucessfully"))
+
+
+ 
 
 app.post('/contact', async (req, res) => {
   const { name, email } = req.body;

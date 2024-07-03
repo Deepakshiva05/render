@@ -7,8 +7,9 @@ const Contact = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
+    console.log(email,name);
     try {
-      const response = await axios.post('http://localhost:5173/contact', {
+      const response = await axios.post('http://localhost:8000/contact', {
         name: name,
         email: email,
       });

@@ -11,6 +11,6 @@ const renderdata= new mongoose.Schema({
     }
 })
 
-const RenderUser=mongoose.model('Renderdata',renderdata);
+const RenderUser=mongoose.model('Renderuser',renderdata);
 
 module.exports=RenderUser;
